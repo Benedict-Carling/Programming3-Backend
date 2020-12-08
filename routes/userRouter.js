@@ -6,9 +6,9 @@ const User = require("../models/userModel");
 
 router.post("/register", async (req, res) => {
   try {
-    let { email, password, passwordCheck } = req.body;
+    let { email, password, passwordCheck, userType } = req.body;
     //validation
-    if (!email || !password || !passwordCheck)
+    if (!email || !password || !passwordCheck || !userType)
       return res.status(400).json({ msg: "Not all fields have been entered." });
     if (password.length < 5)
       return res
@@ -19,12 +19,16 @@ router.post("/register", async (req, res) => {
     const existingUser = await User.findOne({ email: email });
     if (existingUser)
       return res.status(400).json({ msg: "Email already in use." });
-
+    if (["reviewer", "editor", "webmaster"].indexOf(userType) < 0)
+      return res.status(400).json({
+        msg: "Invalid userType, not one of reviewer, editor or webmaster",
+      });
     const salt = await bcrypt.genSalt();
     const passwordhash = await bcrypt.hash(password, salt);
     const newUser = new User({
       email: email,
       password: passwordhash,
+      accountType: userType,
     });
     const savedUser = await newUser.save();
     res.json(savedUser);
