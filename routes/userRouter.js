@@ -78,6 +78,15 @@ router.delete("/delete", auth, async (req, res) => {
   }
 });
 
+router.get("/allusers", async (req, res) => {
+  try {
+    const allusers = await User.find();
+    res.json(allusers);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
