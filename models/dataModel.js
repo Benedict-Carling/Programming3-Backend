@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const dataSchema = new mongoose.Schema({
     U_PASSCODE: { type: String, required: true, unique: true},
     Id: { type: String, required:true, unique: true },
-    Id: { type: String, required:true, unique: true },
     Date: { type: String, required:true},
     Flag: { type: String, required:true},
     "User interpretation": { type: String, required:true},
@@ -13,5 +12,5 @@ const dataSchema = new mongoose.Schema({
     "Image path": { type: String, required:true},
 });
 
-module.exports = Data = mongoose.model("data",dataSchema);
+var Data = mongoose.model("data",dataSchema);
 module.exports = Data;
