@@ -13,6 +13,7 @@ router.get("/table", async(req,res) => {
         res.status(500).json(err.message);
       }
 });
+
 /*U_PASSCODE: row.U_PASSCODE,
           Id: row.Id,
           Date: row.Date,
@@ -20,19 +21,18 @@ router.get("/table", async(req,res) => {
           UserInterpretation: row.UserInterpretation,
           AlgorithmInterpretation: row.AlgorithmInterpretation,
           ExpertInterpretation: row.ExpertInterpretation,*/
-var id = "10";
 //ImagePath: row.ImagePath,
 router.post("/add-comment", async (req,res) =>{
   try {
-    const row = await Data.findOne({"Id": id})
-    await Data.updateOne({"Id": id},
-    {$set:{  ExpertComment:"yes"}}
-     );
-   const updaterow = await Data.findOne({"Id": id})
-   res.status(200).json(updaterow)
-   console.log(updaterow.ExpertComment)
-   console.log(updaterow.Id)
+      const row = await Data.findOne({Id: '10'})
+      await Data.updateOne({Id:'10'},
+      {ExpertComment:"Big chungus"})
+      const updaterow = await Data.findOne({Id: '10'})
+      res.status(200).json(updaterow)
+      console.log(updaterow)
+    
 }
+    
    catch (err) {
     res.status(500).json(err.message);
   }
