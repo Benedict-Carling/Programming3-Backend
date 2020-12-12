@@ -23,11 +23,16 @@ router.get("/table", async(req,res) => {
           ExpertInterpretation: row.ExpertInterpretation,*/
 //ImagePath: row.ImagePath,
 router.post("/add-comment", async (req,res) =>{
+  const {InputId,InputComment,InputValidation} = req.body;
+  console.log(InputId)
   try {
-      const row = await Data.findOne({Id: '10'})
-      await Data.updateOne({Id:'10'},
-      {ExpertComment:"Big chungus"})
-      const updaterow = await Data.findOne({Id: '10'})
+      const row = await Data.findOne({Id: InputId})
+      await Data.updateOne({Id:InputId},
+      {$set:{
+        ExpertComment:InputComment,
+        ExpertInterpretation:InputValidation
+      }})
+      const updaterow = await Data.findOne({Id:InputId})
       res.status(200).json(updaterow)
       console.log(updaterow)
     
