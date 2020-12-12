@@ -35,12 +35,21 @@ router.post("/add-comment", async (req,res) =>{
       const updaterow = await Data.findOne({Id:InputId})
       res.status(200).json(updaterow)
       console.log(updaterow)
-    
 }
-    
-   catch (err) {
+  catch (err) {
     res.status(500).json(err.message);
   }
 });
+
+router.post("/show-image",async (req,res) =>{
+  const {InputId} = req.body;
+  try {
+    image  = `../example_images/${InputId}.jpg`
+    console.log(image)
+    res.status(200).json(image)
+  } catch (err) {
+    res.status(500).json(err.message)
+  }
+})
 
 module.exports = router;
