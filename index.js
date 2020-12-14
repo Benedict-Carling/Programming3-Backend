@@ -30,4 +30,5 @@ mongoose.connect(
 // initalise routes middleware, middleware only applies to /users endpoint
 app.use("/users", require("./routes/userRouter"));
 app.use("/data", require("./routes/dataRouter"));
+app.use("/log", require("./routes/logRouter"));
 
