@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 // Set up the mongoose schema that will be used to access the database
 const dataSchema = new mongoose.Schema({
-    Email: {type: String, required: true, unique: true},
+    Email: {type: String, required: true},
     accountType: {type: String, required: true},
     LogDate: { type: String, required:true},
     testId: { type: String, required:true},

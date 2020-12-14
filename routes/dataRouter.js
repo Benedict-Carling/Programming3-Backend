@@ -7,7 +7,6 @@ const Data = require("../models/dataModel");
 router.get("/table", async(req,res) => {
     try {
         const table =  await Data.find({});
-        console.log(table)
         res.json(table);
       } catch (err) {
         res.status(500).json(err.message);
@@ -34,7 +33,6 @@ router.post("/add-comment", async (req,res) =>{
       }})
       const updaterow = await Data.findOne({Id:InputId})
       res.status(200).json(updaterow)
-      console.log(updaterow)
 }
   catch (err) {
     res.status(500).json(err.message);
