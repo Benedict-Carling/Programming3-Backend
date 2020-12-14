@@ -15,21 +15,20 @@ router.get("/table", async(req,res) => {
 });
 
 router.post("/add-log", async (req,res) =>{
-    const {InDate} = req.body;
+    const {InDate, InId, InComment,InInterpretation} = req.body;
     try {
         const newEntry = new Log({
-            Email : "hoody",
+            Email : "noice",
             accountType : "howdy",
             LogDate : InDate,
-            testId : "howdy",
-            ExpertInterpretation : "howdy",
-            ExpertComment : "howdy",
+            testId : InId,
+            ExpertInterpretation : InInterpretation,
+            ExpertComment : InComment,
         });
         const savedEntry = await newEntry.save();
         res.json(savedEntry);
     }
     catch (err) {
-        console.log("poop")
       res.status(500).json(err.message);
     }
   });

@@ -23,7 +23,6 @@ router.get("/table", async(req,res) => {
 //ImagePath: row.ImagePath,
 router.post("/add-comment", async (req,res) =>{
   const {InputId,InputComment,InputValidation} = req.body;
-  console.log(InputId)
   try {
       const row = await Data.findOne({Id: InputId})
       await Data.updateOne({Id:InputId},
