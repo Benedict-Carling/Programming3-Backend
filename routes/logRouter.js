@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 const Log = require("../models/logModel");
+ 
 
 router.get("/table", async(req,res) => {
     try {
@@ -15,11 +16,11 @@ router.get("/table", async(req,res) => {
 });
 
 router.post("/add-log", async (req,res) =>{
-    const {InDate, InId, InComment,InInterpretation} = req.body;
+    const {InEmail,InType,InDate, InId, InComment,InInterpretation} = req.body;
     try {
         const newEntry = new Log({
-            Email : "noice",
-            accountType : "howdy",
+            Email : InEmail,
+            accountType : InType,
             LogDate : InDate,
             testId : InId,
             ExpertInterpretation : InInterpretation,
