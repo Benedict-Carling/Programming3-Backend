@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
         .status(400)
         .json({ msg: "Password need to be atleast 5 character long." });
     if (password !== passwordCheck)
-      return res.status(400).json({ msg: "Enter the same password twice." });
+      return res.status(400).json({ msg: "Passwords do not match." });
     const existingUser = await User.findOne({ email: email });
     if (existingUser)
       return res.status(400).json({ msg: "Email already in use." });
