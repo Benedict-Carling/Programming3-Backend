@@ -45,13 +45,13 @@ router.post("/changePassword", auth, async (req,res) =>{
     if(password !== passwordCheck){
       return res.status(400).json({ msg: "Passwords do not match." });
     }
-    const deletedaccountBeforeChange = await User.findByIdAndDelete(req.user);
+    const deletedAccountBeforeChange = await User.findByIdAndDelete(req.user);
     const salt = await bcrypt.genSalt();
     const passwordhash = await bcrypt.hash(password, salt);
     const newUser = new User({
       email: deletedAccountBeforeChange.email,
       password: passwordhash,
-      accountType: deletedAccountBeforeChange.userType,
+      accountType: deletedAccountBeforeChange.accountType,
     });
     const savedUser = await newUser.save();
     res.json(savedUser);
