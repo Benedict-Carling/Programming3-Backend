@@ -70,16 +70,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.delete("/delete", auth, async (req, res) => {
-  try {
-    const deletedUser = await User.findByIdAndDelete(req.user);
-    res.json(deletedUser);
-  } catch (err) {
-    res.status(500).json(err.message);
-  }
-});
 
-router.delete("/delete_webmaster_auth", checkWebMaster, async (req, res) => {
+router.delete("/delete", checkWebMaster, async (req, res) => {
   try {
     let { accountIDToDelete } = req.body;
     if (req.sourceAccount.accountType !== "webmaster")
