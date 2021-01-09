@@ -1,7 +1,8 @@
 const { response } = require('express');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const User = require("../models/userModel");
 
-const auth = (req, res, next) => {
+const checkWebMaster = async (req, res, next) => {
     try {
         const token = req.header("x-auth-token");
         if (!token)
@@ -10,13 +11,13 @@ const auth = (req, res, next) => {
         const verified = jwt.verify(token, process.env.JWT_SECRET);
         if (!verified)
             return response.status(401).json({msg: "Token verification failed, authentication denied"})
-
-        req.user = verified.id
+        const sourceAccount = await User.findOne({ _id: verified.id })
+        req.sourceAccount = sourceAccount
         next()
     } catch(err) {
-        res.status(500).json({error: err.message})
+        res.status(501).json({error: err.message})
     }
 
 }
 
-module.exports = auth;
+module.exports = checkWebMaster;
