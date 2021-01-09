@@ -38,6 +38,29 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post("/changePassword", auth, async (req,res) =>{
+  try{
+    let {  password, passwordCheck } = req.body;
+    //validation
+    if(password !== passwordCheck){
+      return res.status(400).json({ msg: "Passwords do not match." });
+    }
+    const deletedAccountBeforeChange = await User.findByIdAndDelete(req.user);
+    const salt = await bcrypt.genSalt();
+    const passwordhash = await bcrypt.hash(password, salt);
+    const newUser = new User({
+      email: deletedAccountBeforeChange.email,
+      password: passwordhash,
+      accountType: deletedAccountBeforeChange.accountType,
+    });
+    const savedUser = await newUser.save();
+    res.json(savedUser);
+  }
+  catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -69,7 +92,6 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err.message);
   }
 });
-
 
 router.delete("/delete", checkWebMaster, async (req, res) => {
   try {
