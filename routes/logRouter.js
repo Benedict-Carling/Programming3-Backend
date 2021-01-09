@@ -16,10 +16,11 @@ router.get("/table", async(req,res) => {
 });
 
 router.post("/add-log", async (req,res) =>{
-    const {InEmail,InType,InDate, InId, InComment,InInterpretation} = req.body;
+    const {InEmail,InU_PASSCODE,InType,InDate, InId, InComment,InInterpretation} = req.body;
     try {
         const newEntry = new Log({
             Email : InEmail,
+            U_PASSCODE : InU_PASSCODE,
             accountType : InType,
             LogDate : InDate,
             testId : InId,
