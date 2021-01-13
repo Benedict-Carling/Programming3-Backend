@@ -7,6 +7,7 @@ const Data = require("../models/dataModel");
 router.get("/table", async(req,res) => {
     try {
         const table =  await Data.find({});
+        res.status(200)
         res.json(table);
       } catch (err) {
         res.status(500).json(err.message);
