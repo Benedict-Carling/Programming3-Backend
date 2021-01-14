@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 //tell mongoose to use es6 implementation of promises
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://James:PASSWORDHERE@cluster0.0kohd.mongodb.net/main?retryWrites=true&w=majority'); 
+mongoose.connect('mongodb+srv://James:Password@cluster0.0kohd.mongodb.net/main?retryWrites=true&w=majority'); 
 mongoose.connection
     .once('open', () => console.log('Connected!'))
     .on('error', (error) => {

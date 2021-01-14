@@ -2,7 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
-const Data = require("../models/dataModel");
+const Data = require("../models/dataModel").Data;
 
 router.get("/table", async(req,res) => {
     try {

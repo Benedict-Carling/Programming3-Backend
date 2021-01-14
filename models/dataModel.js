@@ -16,8 +16,6 @@ const dataSchema = new mongoose.Schema({
 // Importing and calling 'Data' elsewhere will access the data collection of the database
 var Data = mongoose.model("data",dataSchema);
 var testingData = mongoose.model("testdata",dataSchema)
-module.exports = {
-    Data: Data,
-    tester: testingData
-};
+module.exports.Data = Data;
+module.exports.tester = testingData;
 
