@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit -R min"
+    "test": "mocha --exit -R min --timeout(5000)"
   },
   "jest": {
     "testEnvironment": "node",
