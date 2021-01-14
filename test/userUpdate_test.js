@@ -3,17 +3,7 @@ const assert = require('assert');
 const User = require('../models/userModel').User;
 describe('Updating a user', () => {
 
-  let user;
-
-  beforeEach((done) => {
-    user = new User({
-        email: "TestEmail@email.com",
-        password: "Test Password",
-        accountType: "Test Account Type",
-    });
-    user.save()
-      .then(() => done());
-  });
+ 
   
   function assertHelper(statement, done) {
     statement
