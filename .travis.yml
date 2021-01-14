@@ -1,8 +1,12 @@
 language: node_js
 Node_js:
   - "14.15.3"
+install:
+  - npm install
 script: 'true'
 deploy: 
   provider: heroku
   api-key: b108bedf-8719-46ca-bc65-549db7cd836e
   skip_cleanup: true
+on:
+  branch: main
