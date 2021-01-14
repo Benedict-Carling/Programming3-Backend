@@ -1,8 +1,15 @@
 //inside tests/test_helper.js
 const mongoose = require('mongoose');
+require("dotenv").config();
+
 //tell mongoose to use es6 implementation of promises
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://James:Password@cluster0.0kohd.mongodb.net/main?retryWrites=true&w=majority'); 
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, 
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  });
 mongoose.connection
     .once('open', () => console.log('Connected!'))
     .on('error', (error) => {
