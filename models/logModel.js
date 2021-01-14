@@ -13,4 +13,7 @@ const dataSchema = new mongoose.Schema({
 // Data is set to the collection called "data" with the same schema as defined above
 // Importing and calling 'Data' elsewhere will access the data collection of the database
 var Log = mongoose.model("log",dataSchema);
-module.exports = Log;
+var testingLog = mongoose.model("testlog",dataSchema)
+
+module.exports.Log = Log;
+module.exports.tester = testingLog;

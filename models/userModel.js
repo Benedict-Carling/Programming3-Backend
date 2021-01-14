@@ -6,4 +6,6 @@ const userSchema = new mongoose.Schema({
   accountType: { type: String, required: true },
 });
 var User = mongoose.model("user", userSchema);
-module.exports = User;
+var testingUser = mongoose.model("testuser",userSchema)
+module.exports.User = User;
+module.exports.tester = testingUser;
