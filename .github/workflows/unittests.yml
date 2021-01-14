@@ -3,7 +3,7 @@
 
 name: Node.js CI
 env:
-   MONGODB_CONNECTION_STRING: ${{ secrets.MONGODB_CONNECTION_STRING }}
+   MONGODB_CONNECTION_STRING: ${{ secrets.MONGODB_ACCESS_KEY }}
 
 on:
   push:
