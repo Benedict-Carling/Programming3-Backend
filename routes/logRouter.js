@@ -2,7 +2,7 @@ const router = require("express").Router(); //backend router for logs collection
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
-const Log = require("../models/logModel"); //accessing logs schema
+const Log = require("../models/logModel").Log; //accessing logs schema
 
 //File consisting of different end points for post or get requests to a specific table in the database, the logs database
 

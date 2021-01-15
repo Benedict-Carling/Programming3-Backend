@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 const checkWebMaster = require("../middleware/checkWebMaster");
-const User = require("../models/userModel"); //accessing the User schema/model
+const User = require("../models/userModel").User; //accessing the User schema/model
 
 //File consisting of different end points for post or get requests to a specific table in the database, the users database
 
