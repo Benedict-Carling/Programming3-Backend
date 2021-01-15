@@ -1,6 +1,6 @@
 const assert = require("assert");
 const User = require("../models/userModel").User;
-
+describe("Updating an entry", () => {
   it("update all matching users using model", (done) => {
    
       User.updateMany(
@@ -27,4 +27,5 @@ const User = require("../models/userModel").User;
       done();
     
   });
+});
 
