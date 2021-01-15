@@ -1,0 +1,4 @@
+# Files for code formatting to ignore
+
+.env
+.gitignore
