@@ -41,7 +41,7 @@ router.post("/add-log", async (req, res) => {
       ExpertComment: InComment,
     });
     const savedEntry = await newEntry.save(); //saving the entry in the database
-    res.json(savedEntry);
+    res.status(200).json(savedEntry);
   } catch (err) {
     res.status(500).json(err.message);
   }
