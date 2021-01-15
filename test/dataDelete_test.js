@@ -1,4 +1,3 @@
-// delete_test.js
 const assert = require("assert");
 const Data = require("../models/dataModel").Data;
 describe("Deleting a user", () => {

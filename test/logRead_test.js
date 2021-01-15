@@ -1,6 +1,5 @@
-//inside read_test.js
 const assert = require("assert");
-const Log = require("../models/logModel").Log; //imports the Data model.
+const Log = require("../models/logModel").Log; //imports the Logs model.
 beforeEach(() => {
   testLog = new Log({
     Email: "Test email",

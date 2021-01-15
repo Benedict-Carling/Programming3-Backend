@@ -1,10 +1,9 @@
-//inside read_test.js
 const assert = require("assert");
 const Data = require("../models/dataModel").Data; //imports the Data model.
 let testData;
 beforeEach(() => {
   testData = new Data({
-    //testing on random set of values
+    //creates an entry to be read
     U_PASSCODE: "Test Passcode",
     Id: "Test Id",
     Date: "Test Date",

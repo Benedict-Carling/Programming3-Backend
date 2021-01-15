@@ -1,4 +1,3 @@
-// update_test.js
 const assert = require("assert");
 const User = require("../models/userModel").User;
 describe("Updating a user", () => {
