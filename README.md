@@ -2,9 +2,12 @@
 
 Express.js based BackEnd to communicate with MongoDB.
 
+## Hosting
+You can currently access the website backend following this link: https://programmingbackend3.herokuapp.com/
+
 ## UnitTests
 
-Instead of Travis CI we used the local github workflows pipeline to automatically test unit test on each pull request into the main branch as well as the main branch itself, you can see below the status of the current main branch.
+Instead of Travis CI, we used the local GitHub workflows pipeline to automatically test our unit tests on each pull request made into the main branch, as well as the main branch itself. You can see below the status of the current main branch.
 
 ![Github Workflow Status CI](https://github.com/Benedict-Carling/Programming3-Backend/workflows/Node.js%20CI/badge.svg)
 
@@ -15,15 +18,19 @@ The workflow initiator file can be seen within the `.github/workflows/` folder a
 
 Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (https://git-scm.com/download/win) 
 
-Gitclone the project from: https://github.com/Benedict-Carling/Programming3-Backend.git
+Git clone the project from: https://github.com/Benedict-Carling/Programming3-Backend.git or by using the terminal:
 
-Update and install relevant packages using the terminal inside root of the project:
+```bash
+git clone https://github.com/Benedict-Carling/Programming3-Backend.git
+```
+
+To update and install relevant packages use the terminal inside root of the project:
 
 ```bash
 npm install
 ```
 
-.env file has to be made inside the root of the project containing MongoDB connection string and authentication information. Please contact us if you believe you should have access to this.
+.env file has to be made inside the root of the project containing the MongoDB connection string and authentication information. Please contact us if you believe you should have access to this.
 
 ## Usage
 
