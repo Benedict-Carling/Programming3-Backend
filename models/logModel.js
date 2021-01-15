@@ -10,8 +10,8 @@ const dataSchema = new mongoose.Schema({
     ExpertComment: { type: String},
 });
 
-// Data is set to the collection called "data" with the same schema as defined above
-// Importing and calling 'Data' elsewhere will access the data collection of the database
+// Data is set to the collection called "logs" with the same schema as defined above
+// Importing and calling 'Log' elsewhere will access the collection of the database
 var Log = mongoose.model("log",dataSchema);
 var testingLog = mongoose.model("testlog",dataSchema)
 
