@@ -5,13 +5,13 @@ describe("Creating documents", () => {
     //assertion is not included in mocha so
     //require assert which was installed along with mocha
     var testLog = new tester({
-        Email: "Test email",
-        U_PASSCODE: "Test Passcode",
-        accountType: "Test Account Type",
-        LogDate: "Test Date",
-        testId: "Test Test Id",
-        ExpertInterpretation: "Test Expert Interpretation",
-        ExpertComment: "Test Expert Comment"
+      Email: "Test email",
+      U_PASSCODE: "Test Passcode",
+      accountType: "Test Account Type",
+      LogDate: "Test Date",
+      testId: "Test Test Id",
+      ExpertInterpretation: "Test Expert Interpretation",
+      ExpertComment: "Test Expert Comment",
     });
     testLog.save().then(() => {
       assert(!testLog.isNew); //if logs is saved to db it is not new

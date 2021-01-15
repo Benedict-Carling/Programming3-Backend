@@ -31,4 +31,3 @@ mongoose.connect(
 app.use("/users", require("./routes/userRouter"));
 app.use("/data", require("./routes/dataRouter"));
 app.use("/log", require("./routes/logRouter"));
-
