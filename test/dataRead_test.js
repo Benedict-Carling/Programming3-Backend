@@ -4,7 +4,6 @@ let testData;
 
 describe("Reading database details", () => {
   it("finds entry with Id of Test Id", (done) => {
-
     testData = new Data({
       //creates an entry to be read
       U_PASSCODE: "Test Passcode",

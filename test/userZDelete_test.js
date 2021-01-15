@@ -6,13 +6,10 @@ have a delete test of any kind run last, this allows the hook in test helper
 to wipe the entries added by the update,read, and model tests.
 */
 
-
 const assert = require("assert");
 const User = require("../models/userModel").User;
 describe("Deleting a user", () => {
-
   it("removes a user by email", (done) => {
-
     testUser = new User({
       email: "TestEmail@email.com",
       password: "Test Password",
