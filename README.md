@@ -6,7 +6,7 @@ Express.js based BackEnd to communicate with MongoDB.
 
 Instead of Travis CI we used the local github workflows pipeline to automatically test unit test on each pull request into the main branch as well as the main branch itself, you can see below the status of the current main branch.
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Benedict-Carling/Programming3-Backend/Unittests)
+![Github Workflow Status CI](https://github.com/Benedict-Carling/Programming3-Backend/workflows/Node.js%20CI/badge.svg)
 
 The workflow initiator file can be seen within the `.github/workflows/` folder and the unit tests themselves can be found within `src/__tests__` folder
 
