@@ -10,7 +10,6 @@ describe("Updating a user", () => {
   it("update all matching users using model", (done) => {
     assertHelper(
       User.updateMany(
-        { email: "TestEmail@email.com" },
         {
           email: "TestedEmail@email.com",
           password: "Test Password",

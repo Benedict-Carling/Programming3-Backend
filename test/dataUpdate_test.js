@@ -10,7 +10,6 @@ describe("Updating an entry", () => {
   it("update one user using model", (done) => {
     assertHelper(
       Data.findOneAndUpdate(
-        { Id: "Test Id" },
         {
           U_PASSCODE: "Test Passcode",
           Id: "Test Id",
