@@ -9,7 +9,6 @@ describe("Updating an entry", () => {
       accountType: "Test Account Type",
     });
     testUser.save();
-    console.log("add u1")
     User.updateMany({email: "TestedEmail@email.com"},
     {
       email: "TestedEmail@email.com",
@@ -27,7 +26,6 @@ describe("Updating an entry", () => {
       accountType: "Test Account Type",
     });
     testUser.save();
-    console.log("add u2")
     User.findOneAndUpdate({email: "TestEmail@email.com"},
       {
         email: "TestEmail@email.com",
@@ -35,7 +33,6 @@ describe("Updating an entry", () => {
         accountType: "Test Account Type",
       }
     ),
-    console.log("done")
       done();
   });
 });

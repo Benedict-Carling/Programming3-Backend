@@ -8,7 +8,6 @@ describe("Creating documents", () => {
       accountType: "Test Account Type",
     });
     testUser.save();
-    console.log("add m")
     done();
   });
 });

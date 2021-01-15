@@ -10,7 +10,6 @@ describe("Reading database details", () => {
         accountType: "Test Account Type",
       });
       testUser.save();
-      console.log("add r")
     User.findOne({ password: "Test Password" }).then((User) => {
       assert(testUser.password === "Test Password");
       done();

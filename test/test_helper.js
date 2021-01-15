@@ -16,7 +16,6 @@ mongoose.connection
   });
 //Called hooks which runs before something.
 beforeEach((done) => {
-  console.log("take")
   mongoose.connection.collections.users.deleteMany({password: "Test Password"});
   mongoose.connection.collections.datas.deleteMany({ Flag: "Test Flag" });
   mongoose.connection.collections.logs.deleteMany({ Email: "Test email" });
