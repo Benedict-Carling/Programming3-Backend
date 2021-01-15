@@ -8,7 +8,7 @@ Instead of Travis CI we used the local github workflows pipeline to automaticall
 
 ![Github Workflow Status CI](https://github.com/Benedict-Carling/Programming3-Backend/workflows/Node.js%20CI/badge.svg)
 
-The workflow initiator file can be seen within the `.github/workflows/` folder and the unit tests themselves can be found within `src/__tests__` folder
+The workflow initiator file can be seen within the `.github/workflows/` folder and the unit tests themselves can be found within `/test` folder
 
 
 ## Installation
@@ -30,5 +30,5 @@ npm install
 To establish connection with MongoDB and locally host the BackEnd,  use terminal inside root of the project to type:
 
 ```bash
-node Index.js
+node index.js
 ```
