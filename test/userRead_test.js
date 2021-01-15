@@ -1,6 +1,6 @@
 const assert = require("assert");
 const User = require("../models/userModel").User; //imports the Data model.
-beforeEach(() => {
+beforeEach(() => {//creates the entry to be read
   testUser = new User({
     email: "TestEmail@email.com",
     password: "Test Password",
