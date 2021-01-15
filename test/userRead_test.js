@@ -1,10 +1,9 @@
 
 //inside read_test.js
 const assert = require('assert');
-const tester = require('../models/userModel').tester; //imports the Data model.
-let testData;
+const User = require('../models/userModel').User; //imports the Data model.
 beforeEach(() => {
-    testUser = new tester({
+    testUser = new User({
         email: "TestEmail@email.com",
         password: "Test Password",
         accountType: "Test Account Type",
@@ -14,8 +13,8 @@ beforeEach(() => {
 });
 describe('Reading database details', () => {
     it('finds entry with password of Test password', (done) => {
-        tester.findOne({ password: 'Test Password' })
-            .then((tester) => {
+        User.findOne({ password: 'Test Password' })
+            .then((User) => {
                 assert(testUser.password === 'Test Password'); 
                 done();
             });
