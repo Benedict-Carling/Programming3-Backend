@@ -4,7 +4,7 @@ Express.js based BackEnd to communicate with MongoDB.
 
 ## Installation
 
-Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (https://git-scm.com/download/win)
+Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (https://git-scm.com/download/win) 
 
 Gitclone the project from: https://github.com/Benedict-Carling/Programming3-Backend.git
 
@@ -18,7 +18,7 @@ npm install
 
 ## Usage
 
-To establish connection with MongoDB and locally host the BackEnd, use terminal inside root of the project to type:
+To establish connection with MongoDB and locally host the BackEnd,  use terminal inside root of the project to type:
 
 ```bash
 node Index.js

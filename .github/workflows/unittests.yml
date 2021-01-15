@@ -3,16 +3,17 @@
 
 name: Node.js CI
 env:
-  MONGODB_CONNECTION_STRING: ${{ secrets.MONGODB_ACCESS_KEY }}
+   MONGODB_CONNECTION_STRING: ${{ secrets.MONGODB_ACCESS_KEY }}
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,12 +22,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - run: npm ci
-      - run: npm run test
-      - run: npx prettier --check .
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - run: npm ci
+    - run: npm run test

@@ -27,7 +27,6 @@
     "mocha": "^8.2.1",
     "mongoose": "^5.10.17",
     "nodemon": "^2.0.6",
-    "prettier": "2.2.1",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0"
   },

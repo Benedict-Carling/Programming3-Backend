@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
 // Data is set to the collection called "Users" with the same schema as defined above
 // Importing and calling 'User' elsewhere will access the collection of the database
 var User = mongoose.model("user", userSchema);
-var testingUser = mongoose.model("testuser", userSchema);
+var testingUser = mongoose.model("testuser",userSchema)
 module.exports.User = User;
 module.exports.tester = testingUser;
