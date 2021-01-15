@@ -1,10 +1,10 @@
 const assert = require("assert");
-const tester = require("../models/logModel").tester; //imports the logs model.
+const Log = require("../models/logModel").Log; //imports the logs model.
 describe("Creating documents", () => {
   it("creates a fake log database", (done) => {
     //assertion is not included in mocha so
     //require assert which was installed along with mocha
-    var testLog = new tester({
+    var testLog = new Log({
         Email: "Test email",
         U_PASSCODE: "Test Passcode",
         accountType: "Test Account Type",
@@ -13,9 +13,7 @@ describe("Creating documents", () => {
         ExpertInterpretation: "Test Expert Interpretation",
         ExpertComment: "Test Expert Comment"
     });
-    testLog.save().then(() => {
-      assert(!testLog.isNew); //if logs is saved to db it is not new
-      done();
+    testLog.save()
+    done();
     });
   });
-});

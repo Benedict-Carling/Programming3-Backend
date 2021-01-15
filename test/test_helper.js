@@ -16,14 +16,12 @@ mongoose.connection
   });
 //Called hooks which runs before something.
 beforeEach((done) => {
-    mongoose.connection.collections.testusers.drop(()=> {
-        //this function runs after the drop is completed
-      });  mongoose.connection.collections.testlogs.drop(()=> {
-    //this function runs after the drop is completed
-  });
-  mongoose.connection.collections.testdatas.drop(()=> {
-    //this function runs after the drop is completed
-  });  mongoose.connection.collections.users.deleteMany({password: 'Test Password'})
+ 
+  mongoose.connection.collections.users.deleteMany({password: 'Test Password'})
+  mongoose.connection.collections.datas.deleteMany({Flag: "Test Flag"})
+  mongoose.connection.collections.logs.deleteMany({Email: "Test email"})
+
+
  //go ahead everything is done now.
   done();
 });
