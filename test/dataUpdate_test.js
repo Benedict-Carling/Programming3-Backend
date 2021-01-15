@@ -1,14 +1,8 @@
 const assert = require("assert");
 const Data = require("../models/dataModel").Data;
 describe("Updating an entry", () => {
-  function assertHelper(statement, done) {
-    statement;
-
-    done();
-  }
 
   it("update one user using model", (done) => {
-    assertHelper(
       Data.findOneAndUpdate(
         {
           U_PASSCODE: "Test Passcode",
@@ -21,8 +15,7 @@ describe("Updating an entry", () => {
           ExpertComment: "Test Expert Comment",
           ImagePath: "Test Path",
         }
-      ),
-      done
-    );
+      )
+      done();
   });
 });
