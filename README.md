@@ -39,13 +39,13 @@ Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (ht
 Git clone the project from: https://github.com/Benedict-Carling/Programming3-Backend.git or by using the terminal:
 
 ```bash
-git clone https://github.com/Benedict-Carling/Programming3-Backend.git
+$ git clone https://github.com/Benedict-Carling/Programming3-Backend.git
 ```
 
 To update and install relevant packages use the terminal inside root of the project:
 
 ```bash
-npm install
+$ npm install
 ```
 
 .env file has to be made inside the root of the project containing the MongoDB connection string and authentication information. Please contact us if you believe you should have access to this.
@@ -55,5 +55,5 @@ npm install
 To establish connection with MongoDB and locally host the BackEnd, use terminal inside root of the project to type:
 
 ```bash
-node index.js
+$ node index.js
 ```
