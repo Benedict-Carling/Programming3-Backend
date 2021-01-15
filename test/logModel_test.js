@@ -1,9 +1,7 @@
 const assert = require("assert");
 const Log = require("../models/logModel").Log; //imports the logs model.
 describe("Creating documents", () => {
-  it("creates a fake log database", (done) => {
-    //assertion is not included in mocha so
-    //require assert which was installed along with mocha
+  it("creates a test log entry", (done) => {
     var testLog = new Log({
         Email: "Test email",
         U_PASSCODE: "Test Passcode",

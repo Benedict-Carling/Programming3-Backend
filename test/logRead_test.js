@@ -1,9 +1,7 @@
-
-//inside read_test.js
 const assert = require('assert');
 const Log = require('../models/logModel').Log; //imports the Data model.
 beforeEach(() => {
-    testLog = new Log({
+    testLog = new Log({//this creates the test entry to be read
         Email: "Test email",
         U_PASSCODE: "Test Passcode",
         accountType: "Test Account Type",

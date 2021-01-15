@@ -1,9 +1,7 @@
 const assert = require("assert");
 const Data = require("../models/dataModel").Data; //imports the Data model.
 describe("Creating documents", () => {
-  it("creates a fake database of data", (done) => {
-    //assertion is not included in mocha so
-    //require assert which was installed along with mocha
+  it("creates a test data entry", (done) => {
     var testData = new Data({
       U_PASSCODE: "Test Passcode",
       Id: "Test Id",

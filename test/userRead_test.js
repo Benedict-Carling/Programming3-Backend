@@ -1,5 +1,3 @@
-
-//inside read_test.js
 const assert = require('assert');
 const User = require('../models/userModel').User; //imports the Data model.
 beforeEach(() => {
