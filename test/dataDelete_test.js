@@ -2,7 +2,9 @@ const assert = require("assert");
 const Data = require("../models/dataModel").Data;
 describe("Deleting a user", () => {
 
-  beforeEach(() => {
+
+  it("removes an entry by id", (done) => {
+
     testData = new Data({
       //creates an entry to be deleted
       U_PASSCODE: "Test Passcode",
@@ -15,10 +17,8 @@ describe("Deleting a user", () => {
       ExpertComment: "Test Expert Comment",
       ImagePath: "Test Path",
     });
-    testData.save().then(() => done());
-  });
+    testData.save();
 
-  it("removes an entry by id", (done) => {
     Data.findOneAndRemove({ Id: "Test Id" });
 
     done();

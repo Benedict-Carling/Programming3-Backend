@@ -2,18 +2,17 @@ const assert = require("assert");
 const User = require("../models/userModel").User;
 describe("Deleting a user", () => {
 
-  beforeEach(() => {//creates the entry to be deleted
+  it("removes a user by email", (done) => {
+
     testUser = new User({
       email: "TestEmail@email.com",
       password: "Test Password",
       accountType: "Test Account Type",
     });
-    testUser.save().then(() => done());
-  });
+    testUser.save();
 
-  it("removes a user by email", (done) => {
     User.findOneAndRemove({ email: "TestEmail@email.com" });
-
+    console.log("take")
     done();
   });
 });
