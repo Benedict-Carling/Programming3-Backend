@@ -5,11 +5,11 @@ describe("Creating documents", () => {
     //assertion is not included in mocha so
     //require assert which was installed along with mocha
     var testUser = new User({
-        email: "TestEmail@email.com",
-        password: "Test Password",
-        accountType: "Test Account Type",
+      email: "TestEmail@email.com",
+      password: "Test Password",
+      accountType: "Test Account Type",
     });
-    testUser.save() //if poke is saved to db it is not new
-      done();
-    });
+    testUser.save(); //if poke is saved to db it is not new
+    done();
   });
+});

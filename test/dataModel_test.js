@@ -15,8 +15,7 @@ describe("Creating documents", () => {
       ExpertComment: "Test Expert Comment",
       ImagePath: "Test Path",
     });
-    testData.save()
-    done()
-    });
+    testData.save();
+    done();
   });
-
+});

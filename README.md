@@ -3,6 +3,7 @@
 Express.js based BackEnd to communicate with MongoDB.
 
 ## Hosting
+
 You can currently access the website backend following this link: https://programmingbackend3.herokuapp.com/
 
 ## UnitTests
@@ -13,10 +14,9 @@ Instead of Travis CI, we used the local GitHub workflows pipeline to automatical
 
 The workflow initiator file can be seen within the `.github/workflows/` folder and the unit tests themselves can be found within `/test` folder
 
-
 ## Installation
 
-Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (https://git-scm.com/download/win) 
+Please install [node.js] (https://nodejs.org/en/download/current/) and [git] (https://git-scm.com/download/win)
 
 Git clone the project from: https://github.com/Benedict-Carling/Programming3-Backend.git or by using the terminal:
 
@@ -34,7 +34,7 @@ npm install
 
 ## Usage
 
-To establish connection with MongoDB and locally host the BackEnd,  use terminal inside root of the project to type:
+To establish connection with MongoDB and locally host the BackEnd, use terminal inside root of the project to type:
 
 ```bash
 node index.js
